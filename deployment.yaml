@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: Hypha-Learning
+  labels:
+    app: Hypha-Learning
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: Hypha-Learning
+    metadata:
+      labels:
+        app: Hypha-Learning
+    spec:
+      containers:
+        - name: Hypha-Learning
+          image: 274127640471.dkr.ecr.us-east-2.amazonaws.com/hyphalearning:1.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
